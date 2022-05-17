@@ -1,28 +1,38 @@
 #include <iostream>
 #include <vector>
-template<typename T>
 
-bool inrange(std::vector<T>list,std::vector<T>list2 ) {//takes unsorted lists, maybe i should sort?
-    //will not pass an error if the char is equal lol 
 
-    for (int x = 0; x < list.size(); x++) {
-        std::cout << list[x] << " is value and slot is " << x << std::endl; 
+template <typename t> bool inrange(t x1, t x2, t y1, t y2) {
+    if (x1 > x2) {
+        if (y1 > x1 and y2 < x2) return true;
+        else if (y2 <x1 and y2 >x2) return true;
+        else return false;
     }
-    return false;
+    else if (x1 == x2) {
+        if (x1 == y1 or x1 == y2) return true;
+        else return false;
+    }
 
-}//i want to make a "set" class, and also make a bunch of functions for that 
-std::vector<double> nrij = {
-    10,10,10,10,100
+
 };
 int main()
 {
+
+
+    if (inrange<float>(1, -5, 2, -7)) {
+        std::cout << "col\n";
+    }
+    else {
+        std::cout << "no \n";
+    }
+    
     std::cout << "Hello Rangefinder!\n";
     // 1 -5 and 2 -7
     
 }
 
 //version 1
-// bool inrange(T x1, T x2, T x3, T x4){
+// bool inrange(T x1, T x2 = x1, T x3, T x4){
 //if (x1 == x3 || x2 == x3 || x1 == x4 || x2 == x4) return true;
 //else if (x1 > x2) {
 //    if (x3<x1 and x3>x2||x3==x1||x3==x2) return true;
